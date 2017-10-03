@@ -12,4 +12,8 @@ class ModelsMarca extends Model
     protected $fillable=[
     	'id','nombre'
     	];
+    public function product(){
+    	//pertence
+    	return $this->belongsto(ModelsProduct::class);
+    }
 }

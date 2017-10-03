@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class ModelsProduct extends Model
 {
     //
-    protected $table='productos';
+    protected $table='products';
     protected $primarykey='id';
 
     protected $fillable=[
     	'id','name', 'price', 'marks_id'
     ];
 
-    
+    public function mark(){
+    	//hasmany-tiene muchas
+    	 return $this->hasmany(ModelsMark::class);
+    }
 }
