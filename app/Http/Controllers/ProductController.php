@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products=\Market\ModelsProduct::select('products.id','products.name as product','price','marks.name as mark')->join('marks','marks.id','=','products.marks_id')->get();
+        $products=\Market\ModelsProduct::select('products.id','products.name as product','price','marks.name as mark')->join('marks','marks.id','=','products.marks_id')->paginate(5);
         return view('producto/index')->with('products',$products);
     }
 
