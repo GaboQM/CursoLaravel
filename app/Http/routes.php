@@ -16,17 +16,14 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware'=>['web']],function(){
-//rutas con parámetros y rutas con restricciones 0 a 9
-/*	route::get('usuario/{codigo}',function($codigo){
-		return 'usuario= '.$codigo;
-	})
-	//->where('codigo','[0-9]+');
+//route::get('panel','AdministratorController@panel');
+//route::get('access','AdministratorController@access');
+//route::get('repors','AdministratorController@repors');
+		
+		route::get('dashboard','DesktopDashboardController@index');
+		//route::get('modelweb','DesktopDashboardController@modelweb');
+		//route::get('product','ProductController@index');
+			route::resource('product','ProductController');
 	
-	->where('codigo','[A-Za-z]+');
-	;
-	//rutas con restricciones*/
-
-	route::get('producto','ProductoProductoController@index');
-	route:: resource("marca",'ProductoMarcaController');
 });
 
